@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christiansen Arne — Elektriker i Aabenrå</title>
+<title>Christiansen Arne — Elektriker i Aabenraa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
    ROOT
 ═══════════════════════════════════════════════════ */
 :root {
-  --accent:  #059669;
-  --aRGB:    5,150,105;
+  --accent:  #f59e0b;
+  --aRGB:    245,158,11;
   --ink:     #0e0e0e;
   --ink-60:  rgba(14,14,14,.60);
   --ink-20:  rgba(14,14,14,.08);
@@ -53,10 +53,10 @@ img { display: block; max-width: 100%; }
   display: flex; align-items: center; gap: 12px;
 }
 .nav-monogram {
-  width: 38px; height: 38px; border: 1.5px solid var(--accent);
+  width: 38px; height: 38px; border: 1.5px solid var(--ink);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--serif); font-size: 17px; letter-spacing: -.5px;
-  color: var(--accent); flex-shrink: 0;
+  color: var(--ink); flex-shrink: 0;
 }
 .nav-name {
   font-family: var(--sans); font-size: 12px; font-weight: 600;
@@ -73,13 +73,13 @@ img { display: block; max-width: 100%; }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta {
   display: inline-flex; align-items: center; gap: 6px;
-  background: var(--accent); color: var(--ink);
+  background: var(--ink); color: var(--white);
   font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
   text-transform: uppercase; padding: 10px 22px;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--ink);
   transition: background .2s, color .2s;
 }
-.nav-cta:hover { background: var(--ink); color: var(--accent); border-color: var(--ink); }
+.nav-cta:hover { background: var(--white); color: var(--ink); }
 .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-burger span {
   display: block; width: 22px; height: 1.5px; background: var(--ink);
@@ -92,7 +92,7 @@ img { display: block; max-width: 100%; }
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(160deg, rgba(8,7,6,.90) 0%, rgba(24,16,4,.82) 55%, rgba(var(--aRGB),.32) 100%),
+    linear-gradient(160deg, rgba(8,7,6,.88) 0%, rgba(12,10,8,.78) 55%, rgba(20,16,12,.55) 100%),
     #1a1612;
   background-size: cover;
   background-position: center top;
@@ -122,10 +122,10 @@ img { display: block; max-width: 100%; }
   margin-bottom: 40px;
   max-width: 14ch;
 }
-.hero-h1 em { font-style: italic; color: var(--accent); }
+.hero-h1 em { font-style: italic; }
 .hero-bottom {
-  display: flex; flex-direction: column; align-items: flex-start;
-  gap: 24px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 32px;
 }
 .hero-sub {
   font-size: 14px; color: rgba(255,255,255,.55);
@@ -177,67 +177,6 @@ img { display: block; max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════
-   HERO LEAD FORM — "Få et tilbud" card, sits beside the
-   hero text as a proper flex column (not floated/absolute)
-   so both share the same centered max-width alignment.
-═══════════════════════════════════════════════════ */
-.hero-content-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 48px;
-  width: 100%;
-}
-.hero-text { flex: 1 1 auto; max-width: 620px; min-width: 0; }
-.lead-form-card {
-  flex: 0 0 380px;
-  width: 380px;
-  max-width: 100%;
-  background: rgba(14,14,14,.92);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 16px;
-  padding: 32px;
-  z-index: 5;
-}
-.lead-form-title {
-  font-family: var(--serif); font-size: 24px; color: var(--white);
-  margin-bottom: 6px; letter-spacing: -.3px;
-}
-.lead-form-sub { font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 20px; }
-.lead-form input,
-.lead-form textarea,
-.lead-form select {
-  width: 100%; background: var(--white); border: 1px solid transparent;
-  border-radius: 8px; padding: 13px 14px; font-size: 13px;
-  font-family: var(--sans); color: var(--ink);
-  margin-bottom: 10px; outline: none; transition: border-color .2s;
-}
-.lead-form input:focus,
-.lead-form textarea:focus,
-.lead-form select:focus { border-color: var(--accent); }
-.lead-form textarea { min-height: 70px; resize: vertical; font-family: var(--sans); }
-.lead-form select { color: var(--ink-60); cursor: pointer; }
-.lead-form-row { display: flex; gap: 10px; }
-.lead-form-row input { margin-bottom: 10px; }
-.lead-form-submit {
-  width: 100%; background: var(--accent); color: var(--white);
-  border: none; border-radius: 8px; padding: 14px;
-  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  cursor: pointer; margin-top: 4px; transition: filter .2s;
-}
-.lead-form-submit:hover { filter: brightness(1.1); }
-.lead-form-confirm {
-  display: none; color: var(--accent); font-size: 14px; text-align: center;
-  line-height: 1.6; padding: 12px 0;
-}
-@media (max-width: 960px) {
-  .hero-content-row { flex-direction: column; align-items: stretch; gap: 32px; }
-  .hero-text { max-width: 100%; }
-  .lead-form-card { flex: 0 0 auto; width: 100%; }
-}
-
-/* ═══════════════════════════════════════════════════
    EDITORIAL DIVIDER
 ═══════════════════════════════════════════════════ */
 .section-rule {
@@ -251,7 +190,7 @@ img { display: block; max-width: 100%; }
   margin-bottom: 56px;
 }
 .section-num::before {
-  content: ''; display: block; width: 28px; height: 1px; background: var(--accent);
+  content: ''; display: block; width: 28px; height: 1px; background: var(--rule);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -301,22 +240,22 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase; color: var(--ink-60); margin-bottom: 20px;
   display: flex; align-items: center; gap: 12px;
 }
-.about-kicker::before { content: '01 /'; color: var(--accent); }
+.about-kicker::before { content: '01 /'; }
 .about-h2 {
   font-family: var(--serif);
   font-size: clamp(34px, 4vw, 52px);
   line-height: 1.05;
   color: var(--ink); margin-bottom: 28px; letter-spacing: -1px;
 }
-.about-h2 em { font-style: italic; color: var(--accent); }
+.about-h2 em { font-style: italic; }
 .about-body { font-size: 15px; color: var(--ink-60); line-height: 1.85; margin-bottom: 16px; }
 .about-cta {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px;
   margin-top: 24px; transition: gap .2s;
 }
-.about-cta:hover { gap: 16px; color: var(--accent); }
+.about-cta:hover { gap: 16px; }
 
 /* About right: big quote + credentials */
 .about-big-quote {
@@ -335,7 +274,7 @@ img { display: block; max-width: 100%; }
   font-size: 13px; color: var(--ink-60);
 }
 .about-credential-list li:last-child { border-bottom: 1px solid var(--rule); }
-.credential-label { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); min-width: 80px; margin-top: 2px; }
+.credential-label { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); min-width: 80px; margin-top: 2px; }
 
 /* ═══════════════════════════════════════════════════
    SERVICES — numbered editorial list
@@ -352,7 +291,7 @@ img { display: block; max-width: 100%; }
   line-height: 1.05; letter-spacing: -1px;
   color: var(--ink);
 }
-.services-h2 em { font-style: italic; color: var(--accent); }
+.services-h2 em { font-style: italic; }
 .services-intro { font-size: 14px; color: var(--ink-60); line-height: 1.8; align-self: end; }
 
 .services-grid {
@@ -370,7 +309,7 @@ img { display: block; max-width: 100%; }
 }
 .service-card-light:hover { background: rgba(14,14,14,.03); }
 .service-card-light .svc-icon { font-size: 28px; margin-bottom: 16px; display: block; line-height: 1; }
-.service-card-light .svc-icon svg { width: 28px; height: 28px; display: block; color: var(--accent); }
+.service-card-light .svc-icon svg { width: 28px; height: 28px; display: block; color: var(--ink); }
 .service-card-light h3 {
   font-family: var(--serif); font-size: 22px;
   color: var(--ink); margin-bottom: 10px; letter-spacing: -.3px;
@@ -403,7 +342,7 @@ img { display: block; max-width: 100%; }
   font-size: clamp(34px, 4vw, 52px);
   line-height: 1.05; letter-spacing: -1px; color: var(--ink);
 }
-.pricing-h2 em { font-style: italic; color: var(--accent); }
+.pricing-h2 em { font-style: italic; }
 .pricing-note-top {
   font-size: 13px; color: var(--ink-60); line-height: 1.7;
 }
@@ -418,9 +357,9 @@ img { display: block; max-width: 100%; }
 .price-row:last-child { border-bottom: 1px solid var(--rule); }
 .price-row:hover { background: var(--cream); margin: 0 -32px; padding: 18px 32px; }
 .price-name { font-size: 15px; color: var(--ink); display: flex; align-items: center; gap: 10px; }
-.price-name svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--accent); opacity: .9; }
+.price-name svg { width: 16px; height: 16px; flex-shrink: 0; opacity: .75; }
 .price-desc { font-size: 12px; color: var(--ink-60); }
-.price-val { font-family: var(--serif); font-size: 20px; color: var(--accent); text-align: right; white-space: nowrap; }
+.price-val { font-family: var(--serif); font-size: 20px; color: var(--ink); text-align: right; white-space: nowrap; }
 
 /* ═══════════════════════════════════════════════════
    STATS BAR — Rodeo-inspired confident numbers
@@ -445,7 +384,7 @@ img { display: block; max-width: 100%; }
   color: var(--white); line-height: 1;
   letter-spacing: -2px; margin-bottom: 10px;
 }
-.stat-num em { font-style: italic; color: var(--accent); }
+.stat-num em { font-style: italic; }
 .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; color: rgba(255,255,255,.4); text-transform: uppercase; }
 
 /* ═══════════════════════════════════════════════════
@@ -461,7 +400,7 @@ img { display: block; max-width: 100%; }
 .what-row:last-child { border-bottom: 1px solid var(--rule); }
 .what-row:hover { background: rgba(14,14,14,.03); margin: 0 -32px; padding: 40px 32px; }
 .what-num {
-  font-family: var(--serif); font-size: 36px; color: rgba(var(--aRGB),.45);
+  font-family: var(--serif); font-size: 36px; color: var(--rule);
   line-height: 1; padding-top: 4px;
 }
 .what-title { font-family: var(--serif); font-size: 22px; color: var(--ink); margin-bottom: 10px; }
@@ -472,24 +411,22 @@ img { display: block; max-width: 100%; }
    byg_reviews_html_light() produces .reviews-section
 ═══════════════════════════════════════════════════ */
 .reviews-section { padding: 96px 0; background: var(--white); }
-.reviews-section .container {
-  max-width: var(--max); margin: 0 auto; padding: 0 32px;
+.reviews-section .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-label {
+  display: block;
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 14px;
 }
-.reviews-section .section-header {
-  text-align: center; margin-bottom: 56px;
-}
-.reviews-section .section-label {
-  font-size: 9px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--ink-60);
-  display: inline-block; margin-bottom: 14px;
-}
-.reviews-section .section-title {
-  font-family: var(--serif); font-size: clamp(28px, 3.5vw, 44px);
-  color: var(--ink); letter-spacing: -.5px;
+.section-title {
+  font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
+  color: var(--ink); font-weight: 400; letter-spacing: -1px;
+  line-height: 1.15;
 }
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
   justify-content: center;
   gap: 0;
 }
@@ -522,10 +459,10 @@ img { display: block; max-width: 100%; }
 .faq-cta {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px;
   transition: gap .2s;
 }
-.faq-cta:hover { gap: 16px; color: var(--accent); }
+.faq-cta:hover { gap: 16px; }
 .faq-item { border-top: 1px solid var(--rule); }
 .faq-item:last-child { border-bottom: 1px solid var(--rule); }
 .faq-q {
@@ -534,9 +471,9 @@ img { display: block; max-width: 100%; }
   font-size: 14px; font-weight: 500; color: var(--ink); gap: 16px;
   user-select: none;
 }
-.faq-q:hover { color: var(--accent); }
+.faq-q:hover { color: var(--ink-60); }
 .faq-icon { font-size: 22px; font-weight: 300; color: var(--rule); flex-shrink: 0; transition: transform .3s; }
-.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--ink); }
 .faq-a {
   font-size: 13px; color: var(--ink-60); line-height: 1.85;
   max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s;
@@ -564,7 +501,7 @@ img { display: block; max-width: 100%; }
   line-height: 1.05; letter-spacing: -1px;
   color: var(--ink); margin-bottom: 40px;
 }
-.contact-h2 em { font-style: italic; color: var(--accent); }
+.contact-h2 em { font-style: italic; }
 .contact-row {
   display: flex; align-items: flex-start; gap: 0;
   padding: 16px 0; border-top: 1px solid var(--rule);
@@ -579,13 +516,13 @@ img { display: block; max-width: 100%; }
 .c-val a:hover { border-color: var(--ink); }
 .contact-cta {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--accent); color: var(--ink);
+  background: var(--ink); color: var(--white);
   font-size: 11px; font-weight: 600; letter-spacing: 2px;
   text-transform: uppercase; padding: 14px 30px;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--ink);
   transition: background .2s, color .2s;
 }
-.contact-cta:hover { background: var(--ink); color: var(--accent); border-color: var(--ink); }
+.contact-cta:hover { background: var(--white); color: var(--ink); }
 .map-frame {
   height: 100%; min-height: 380px;
   border: none;
@@ -610,9 +547,9 @@ img { display: block; max-width: 100%; }
   display: flex; align-items: center; gap: 12px; letter-spacing: -.3px;
 }
 .footer-monogram {
-  width: 34px; height: 34px; border: 1px solid var(--accent);
+  width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.25);
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 16px; color: var(--accent);
+  font-family: var(--serif); font-size: 16px; color: var(--white);
 }
 .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer-links a {
@@ -632,7 +569,7 @@ img { display: block; max-width: 100%; }
 /* ═══════════════════════════════════════════════════
    ANIMATION — handled by Motion (motiondivision/motion)
 ═══════════════════════════════════════════════════ */
-.fu { opacity: 0; }
+.fu { opacity: 1; } /* JS animates from 0 when motion CDN loads */
 
 /* ═══════════════════════════════════════════════════
    RESPONSIVE
@@ -653,18 +590,83 @@ img { display: block; max-width: 100%; }
 @media (max-width: 640px) {
   :root { --max: 100%; }
   .w { padding: 0 20px; }
-  .nav-inner { padding: 0 20px; }
-  .nav-links { display: none; }
-  .nav-burger { display: block; }
+
+  /* ── NAV MOBILE ── */
+  .nav-inner { padding: 0 16px; }
+  .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    z-index: 899;
+    box-shadow: 0 8px 40px rgba(0,0,0,.12);
+    border-top: 1px solid var(--rule);
+    overflow-y: auto;
+    max-height: calc(100vh - var(--nav-h));
+  }
+  .nav-links.mobile-open { display: flex; }
+  .nav-links a {
+    padding: 18px 24px;
+    font-size: 15px; letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--rule);
+    min-height: 56px;
+    display: flex; align-items: center;
+    color: var(--ink);
+  }
+  .nav-mobile-call {
+    background: var(--ink); color: var(--white) !important;
+    justify-content: center;
+    font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; font-size: 13px !important;
+    min-height: 64px !important;
+    margin: 16px;
+    border-radius: 2px;
+    border-bottom: none !important;
+  }
+
+  /* ── HERO ── */
   .hero-h1 { font-size: 44px; letter-spacing: -1.5px; }
-  .hero-content { padding: 0 20px; padding-bottom: 60px; }
+  .hero-content { padding: 0 20px; padding-bottom: 80px; }
+  .hero-btns { flex-direction: column; gap: 12px; }
+  .hero-btns .btn { width: 100%; text-align: center; justify-content: center; min-height: 52px; }
+
+  /* ── STATS ── */
   .stats-grid { grid-template-columns: repeat(2,1fr); }
-  .stat-item { padding: 40px 24px; }
+  .stat-item { padding: 36px 20px; }
+
+  /* ── SERVICES ── */
   .services-grid { grid-template-columns: 1fr; }
-  .price-row { grid-template-columns: 1fr auto; }
+  .service-card-light { padding: 28px 20px; }
+
+  /* ── PRICING ── */
+  .price-row { grid-template-columns: 1fr auto; gap: 8px; }
   .price-desc { display: none; }
-  .what-row { grid-template-columns: 1fr; gap: 12px; }
+  .price-name { font-size: 14px; }
+  .price-val { font-size: 14px; }
+
+  /* ── WHAT WE DO ── */
+  .what-row { display: flex; flex-direction: column; gap: 10px; padding: 28px 0; }
   .what-num { display: none; }
+  .what-title { font-size: 17px; }
+  .what-desc { font-size: 15px; line-height: 1.6; }
+
+  /* ── REVIEWS ── */
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review-card-light { padding: 32px 20px; }
+
+  /* ── FAQ ── */
+  .faq-q { padding: 20px 0; min-height: 56px; }
+
+  /* ── CONTACT ── */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-left { border-right: none; padding-right: 0;
+    border-bottom: 1px solid var(--rule); padding-bottom: 40px; }
+  .contact-right { padding-left: 0; padding-top: 40px; }
+  iframe { height: 220px; }
 }
 </style>
 
@@ -678,14 +680,15 @@ img { display: block; max-width: 100%; }
       <div class="nav-monogram">C</div>
       <span class="nav-name">Christiansen Arne</span>
     </a>
-    <nav class="nav-links" aria-label="Primær navigation">
+    <nav class="nav-links" id="navLinks" aria-label="Primær navigation">
       <a href="#om">Om os</a>
       <a href="#ydelser">Ydelser</a>
       <a href="#priser">Priser</a>
       <a href="#kontakt">Kontakt</a>
+      <a href="tel:74 62 11 67" class="nav-mobile-call">📞 Ring og book tid</a>
     </nav>
-    <a href="tel:74 62 11 67" class="nav-cta">Ring nu</a>
-    <button class="nav-burger" aria-label="Menu" onclick="this.closest('nav').querySelector('.nav-links').style.display = this.closest('nav').querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
+    <a href="tel:74 62 11 67" class="nav-cta">Book tid</a>
+    <button class="nav-burger" id="navBurger" aria-label="Åbn menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -694,66 +697,23 @@ img { display: block; max-width: 100%; }
 <!-- ═══════════ HERO ═══════════ -->
 <div class="hero" id="top">
   <div class="hero-content">
-   <div class="hero-content-row">
-    <div class="hero-text">
-    <div class="hero-label">Elektriker · Aabenrå</div>
+    <div class="hero-label">Elektriker · Aabenraa</div>
     <h1 class="hero-h1">
-      Elarbejde<br><em>der er</em><br>sikkert udført
+      Elektriker<br><em>i Aabenraa</em><br>du kan stole på
     </h1>
     <div class="hero-bottom">
-      <p class="hero-sub">Autoriseret elektriker — sikkert og korrekt udført elarbejde, hver gang.</p>
+      <div>
+        <p class="hero-sub">Autoriseret elektriker — sikkert og korrekt udført elarbejde, hver gang.</p>
+      </div>
       <div class="hero-actions">
-        <a href="tel:74 62 11 67" class="hero-btn-primary">Ring og få et tilbud →</a>
+        <a href="tel:74 62 11 67" class="hero-btn-primary">Ring og book tid →</a>
         <a href="#ydelser" class="hero-btn-ghost">Se ydelser</a>
       </div>
     </div>
-    </div>
-
-    <div class="lead-form-card">
-      <h3 class="lead-form-title">Få et tilbud</h3>
-      <p class="lead-form-sub">Vi vender tilbage hurtigst muligt.</p>
-      <form class="lead-form" onsubmit="return handleLeadForm(event)">
-        <input type="text" name="navn" placeholder="Dit navn *" required>
-        <div class="lead-form-row">
-          <input type="email" name="email" placeholder="E-mail *" required>
-          <input type="tel" name="telefon" placeholder="Telefon *" required>
-        </div>
-        <div class="lead-form-row">
-          <input type="text" name="postnummer" placeholder="Postnummer *" required>
-          <input type="text" name="by" placeholder="By">
-        </div>
-        <textarea name="besked" placeholder="Skriv en besked *" required></textarea>
-        <select name="kilde">
-          <option value="" disabled selected>Hvor har du fundet os?</option>
-          <option>Google</option>
-          <option>Anbefaling</option>
-          <option>Facebook / Instagram</option>
-          <option>Andet</option>
-        </select>
-        <button type="submit" class="lead-form-submit">Bliv kontaktet</button>
-      </form>
-      <p class="lead-form-confirm" id="leadFormConfirm">Tak! Vi har modtaget din besked og kontakter dig hurtigst muligt.</p>
-    </div>
-   </div>
   </div>
   <div class="hero-ticker-bar">
     <div class="ticker-track" aria-hidden="true">
-      <span>⚡ Fejlfinding</span><span class="dot">·</span>
-      <span>Eltavler</span><span class="dot">·</span>
-      <span>Belysning</span><span class="dot">·</span>
-      <span>Ladestandere</span><span class="dot">·</span>
-      <span>Varmepumper</span><span class="dot">·</span>
-      <span>Sikkerhedseftersyn</span><span class="dot">·</span>
-      <span>Nyinstallation</span><span class="dot">·</span>
-      <span>Døgnvagt</span><span class="dot">·</span>
-      <span>⚡ Fejlfinding</span><span class="dot">·</span>
-      <span>Eltavler</span><span class="dot">·</span>
-      <span>Belysning</span><span class="dot">·</span>
-      <span>Ladestandere</span><span class="dot">·</span>
-      <span>Varmepumper</span><span class="dot">·</span>
-      <span>Sikkerhedseftersyn</span><span class="dot">·</span>
-      <span>Nyinstallation</span><span class="dot">·</span>
-      <span>Døgnvagt</span><span class="dot">·</span>
+      <span>✦ Fejlfinding</span><span class="dot">·</span><span>Eltavle</span><span class="dot">·</span><span>Belysning</span><span class="dot">·</span><span>Ladestander til elbil</span><span class="dot">·</span><span>Varmepumpe-installatio</span><span class="dot">·</span><span>Sikkerhedseftersyn</span><span class="dot">·</span><span>✦ Fejlfinding</span><span class="dot">·</span><span>Eltavle</span><span class="dot">·</span><span>Belysning</span><span class="dot">·</span><span>Ladestander til elbil</span><span class="dot">·</span><span>Varmepumpe-installatio</span><span class="dot">·</span><span>Sikkerhedseftersyn</span><span class="dot">·</span>
     </div>
   </div>
 </div>
@@ -763,7 +723,7 @@ img { display: block; max-width: 100%; }
   <div class="intro-strip-inner">
     <div class="intro-strip-item">
       <strong>Christiansen Arne</strong>
-      <span>— Elektriker i Aabenrå</span>
+      <span>— Elektriker i Aabenraa</span>
     </div>
     <div class="intro-strip-item">📞 <strong><a href="tel:74 62 11 67">74 62 11 67</a></strong></div>
     <div class="intro-strip-item">📍 <span>Tøndervej 225, 6200 Aabenraa, Denmark</span></div>
@@ -779,19 +739,17 @@ img { display: block; max-width: 100%; }
     <div class="about-grid">
       <div class="about-left fu">
         <div class="about-kicker">Om Christiansen Arne</div>
-        <h2 class="about-h2">Autoriseret<br><em>elarbejde,</em><br>udført korrekt</h2>
-        <p class="about-body">
-          Vi tror på, at godt elarbejde starter med grundighed. Hos os møder du altid en autoriseret elektriker, der tager sig tid til at forstå din opgave og finde den rette løsning.
-        </p>
+        <h2 class="about-h2">Professionel elektriker,<br><em>der gør en forskel</em><br>for dig</h2>
+        <p class="about-body">Vi tror på, at godt arbejde starter med at lytte. Hos os møder du altid nogen, der tager sig tid til at forstå præcis hvad du har brug for.</p>
         <p class="about-body">Autoriseret elektriker — sikkert og korrekt udført elarbejde, hver gang.</p>
-        <a href="tel:74 62 11 67" class="about-cta">Ring og få et tilbud i dag →</a>
+        <a href="tel:74 62 11 67" class="about-cta">Book din tid i dag →</a>
       </div>
       <div class="about-right fu" style="transition-delay:.12s">
-        <p class="about-big-quote">Vi sætter altid sikkerheden i centrum — elarbejdet er vores håndværk og din tryghed er vores resultat</p>
+        <p class="about-big-quote">Vi sætter altid kunden i centrum — kvalitet og ordentlighed er kernen i alt, hvad vi laver, og din tilfredshed er vores mål.</p>
         <ul class="about-credential-list">
           <li>
             <span class="credential-label">Virksomhed</span>
-            <span>Christiansen Arne — autoriseret elektriker i Aabenrå</span>
+            <span>Christiansen Arne — Elektriker i Aabenraa</span>
           </li>
           <li>
             <span class="credential-label">Adresse</span>
@@ -820,7 +778,7 @@ img { display: block; max-width: 100%; }
   <div class="w">
     <div class="services-head fu">
       <h2 class="services-h2">Vores<br><em>ydelser</em></h2>
-      <p class="services-intro">Fra akut fejlfinding til komplette el-installationer. Vi klarer alt hvad din bolig eller virksomhed har brug for — udført med præcision og sikkerhed.</p>
+      <p class="services-intro">Fra fejlfinding & akut hjælp til sikkerhedseftersyn — vi løser opgaven med kvalitet og god service, hver gang.</p>
     </div>
     <div class="services-grid">
       
@@ -860,67 +818,48 @@ img { display: block; max-width: 100%; }
 
 <!-- ═══════════ PRICING ═══════════ -->
 <section class="pricing-section" id="priser">
-  <div class="w">
-    <div class="pricing-head fu">
-      <h2 class="pricing-h2">Priser der<br><em>passer til alle</em></h2>
-      <p class="pricing-note-top">
-        Vejledende priser. Præcis pris aftales ved konsultation.<br>
-        Ring til os på <a href="tel:74 62 11 67">74 62 11 67</a> for et tilbud.
-      </p>
-    </div>
-
+  <div class="w"><div class="pricing-head fu"><h2 class="pricing-h2">Priser der<br><em>passer til opgaven</em></h2><p class="pricing-note-top">Vejledende priser. Præcis pris aftales ved henvendelse.<br>Ring til os på <a href="tel:74 62 11 67">74 62 11 67</a> for et tilbud.</p></div>
     <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>Fejlfinding &amp; akut udkald</div><div class="price-desc">Diagnose af elfejl, inkl. udkørsel</div></div>
+      <div><div class="price-name">Fejlfinding & akut hjælp</div><div class="price-desc">Hurtig diagnose og udbedring af elfejl — vi rykker ud når det haster.</div></div>
       <div></div>
-      <div class="price-val">fra 600 kr.</div>
+      <div class="price-val">fra 550 kr./time</div>
     </div>
     <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/><path d="M10 4v6"/></svg>Eltavle &amp; sikringsskab</div><div class="price-desc">Opgradering eller fuld udskiftning</div></div>
-      <div></div>
-      <div class="price-val">fra 4.500 kr.</div>
-    </div>
-    <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 6V3"/><path d="M15 6V3"/><path d="M9 21v-3"/><path d="M15 21v-3"/></svg>Stikkontakter &amp; afbrydere</div><div class="price-desc">Montering, flytning og udskiftning</div></div>
-      <div></div>
-      <div class="price-val">fra 350 kr.</div>
-    </div>
-    <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.9V17h8v-2.1A7 7 0 0 0 12 2z"/></svg>Belysning &amp; installation</div><div class="price-desc">Indendørs og udendørs belysning</div></div>
-      <div></div>
-      <div class="price-val">fra 450 kr.</div>
-    </div>
-    <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4"/><path d="M15 2v4"/><path d="M6 9h12v6a6 6 0 0 1-12 0V9z"/><path d="M4 13h2"/><path d="M18 13h2"/></svg>Ladestander til elbil</div><div class="price-desc">Komplet installation inkl. kabling</div></div>
+      <div><div class="price-name">Eltavle & sikringsskab</div><div class="price-desc">Opgradering, udskiftning og lovliggørelse af eltavler til nutidens krav.</div></div>
       <div></div>
       <div class="price-val">fra 6.500 kr.</div>
     </div>
     <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></svg>Varmepumpe-tilslutning</div><div class="price-desc">El-tilslutning til nye varmepumper</div></div>
-      <div></div>
-      <div class="price-val">fra 2.500 kr.</div>
-    </div>
-    <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Sikkerhedseftersyn</div><div class="price-desc">Gennemgang af hele el-installationen</div></div>
+      <div><div class="price-name">Belysning & installation</div><div class="price-desc">Ny belysning, stikkontakter og ledningsføring udført med præcision.</div></div>
       <div></div>
       <div class="price-val">fra 1.200 kr.</div>
     </div>
     <div class="price-row fu">
-      <div><div class="price-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Akut døgnvagt</div><div class="price-desc">Hjælp udenfor normal åbningstid</div></div>
+      <div><div class="price-name">Ladestander til elbil</div><div class="price-desc">Professionel installation af ladestandere til hjemmet og erhverv.</div></div>
       <div></div>
-      <div class="price-val">Pris aftales</div>
+      <div class="price-val">fra 8.500 kr.</div>
     </div>
-  </div>
+    <div class="price-row fu">
+      <div><div class="price-name">Varmepumpe-installation</div><div class="price-desc">El-tilslutning og opsætning af varmepumper fra godkendte mærker.</div></div>
+      <div></div>
+      <div class="price-val">fra 2.500 kr.</div>
+    </div>
+    <div class="price-row fu">
+      <div><div class="price-name">Sikkerhedseftersyn</div><div class="price-desc">Grundigt eftersyn af elinstallationen, så du er sikker og forsikret.</div></div>
+      <div></div>
+      <div class="price-val">fra 1.500 kr.</div>
+    </div></div>
 </section>
 
 <!-- ═══════════ STATS ═══════════ -->
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-item fu">
-      <div class="stat-num">500<em>+</em></div>
+      <div class="stat-num">1+</div>
       <div class="stat-label">Tilfredse kunder</div>
     </div>
     <div class="stat-item fu" style="transition-delay:.08s">
-      <div class="stat-num">5<em>★</em></div>
+      <div class="stat-num">4</div>
       <div class="stat-label">Google bedømmelse</div>
     </div>
     <div class="stat-item fu" style="transition-delay:.16s">
@@ -928,8 +867,8 @@ img { display: block; max-width: 100%; }
       <div class="stat-label">Års erfaring</div>
     </div>
     <div class="stat-item fu" style="transition-delay:.24s">
-      <div class="stat-num">24<em>/7</em></div>
-      <div class="stat-label">Akut tilkald</div>
+      <div class="stat-num"><em>∞</em></div>
+      <div class="stat-label">Glade kunder</div>
     </div>
   </div>
 </section>
@@ -939,47 +878,48 @@ img { display: block; max-width: 100%; }
   <div class="w">
     <div class="section-num fu">02 / Hvad vi gør</div>
     <div class="what-grid">
-      <div class="what-row fu">
+      
+      <div class="what-row fu" style="transition-delay:0.00s">
         <div class="what-num">01</div>
         <div>
-          <div class="what-title">Fejlfinding &amp; diagnose</div>
+          <div class="what-title">Fejlfinding & akut hjælp</div>
         </div>
-        <div class="what-desc">Hurtig og præcis lokalisering af elfejl med moderne måleudstyr. Vi finder årsagen — ikke bare symptomet.</div>
+        <div class="what-desc">Hurtig diagnose og udbedring af elfejl — vi rykker ud når det haster.</div>
       </div>
-      <div class="what-row fu" style="transition-delay:.07s">
+      <div class="what-row fu" style="transition-delay:0.07s">
         <div class="what-num">02</div>
         <div>
-          <div class="what-title">Eltavle &amp; sikringsskab</div>
+          <div class="what-title">Eltavle & sikringsskab</div>
         </div>
-        <div class="what-desc">Udskiftning og opgradering af gamle eltavler, så din installation lever op til nutidens sikkerhedskrav.</div>
+        <div class="what-desc">Opgradering, udskiftning og lovliggørelse af eltavler til nutidens krav.</div>
       </div>
-      <div class="what-row fu" style="transition-delay:.14s">
+      <div class="what-row fu" style="transition-delay:0.14s">
         <div class="what-num">03</div>
         <div>
-          <div class="what-title">Belysning &amp; installation</div>
+          <div class="what-title">Belysning & installation</div>
         </div>
-        <div class="what-desc">Nye stikkontakter, ledningsføring og belysning — indendørs og udendørs, udført efter gældende regler.</div>
+        <div class="what-desc">Ny belysning, stikkontakter og ledningsføring udført med præcision.</div>
       </div>
-      <div class="what-row fu" style="transition-delay:.21s">
+      <div class="what-row fu" style="transition-delay:0.21s">
         <div class="what-num">04</div>
         <div>
-          <div class="what-title">Ladestandere &amp; smart home</div>
+          <div class="what-title">Ladestander til elbil</div>
         </div>
-        <div class="what-desc">Installation af ladestandere til elbil samt smarte styringsløsninger til lys, varme og sikkerhed.</div>
+        <div class="what-desc">Professionel installation af ladestandere til hjemmet og erhverv.</div>
       </div>
-      <div class="what-row fu" style="transition-delay:.28s">
+      <div class="what-row fu" style="transition-delay:0.28s">
         <div class="what-num">05</div>
         <div>
-          <div class="what-title">Varmepumpe &amp; hvidevarer</div>
+          <div class="what-title">Varmepumpe-installation</div>
         </div>
-        <div class="what-desc">El-tilslutning af varmepumper, komfurer og andre hårde hvidevarer — sikkert og korrekt udført.</div>
+        <div class="what-desc">El-tilslutning og opsætning af varmepumper fra godkendte mærker.</div>
       </div>
-      <div class="what-row fu" style="transition-delay:.35s">
+      <div class="what-row fu" style="transition-delay:0.35s">
         <div class="what-num">06</div>
         <div>
-          <div class="what-title">Gratis vurdering af opgaven</div>
+          <div class="what-title">Sikkerhedseftersyn</div>
         </div>
-        <div class="what-desc">Usikker på omfanget? Ring til os — vi kommer gerne forbi og vurderer opgaven, inden arbejdet går i gang.</div>
+        <div class="what-desc">Grundigt eftersyn af elinstallationen, så du er sikker og forsikret.</div>
       </div>
     </div>
   </div>
@@ -999,30 +939,31 @@ img { display: block; max-width: 100%; }
         <a href="tel:74 62 11 67" class="faq-cta">74 62 11 67 →</a>
       </div>
       <div class="fu" style="transition-delay:.12s">
-        <div class="faq-item open">
-          <div class="faq-q">Er I autoriserede elektrikere? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Ja — alt arbejde udføres af autoriserede og forsikrede elektrikere, så du er sikret et lovligt og korrekt resultat.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Hvor hurtigt kan I rykke ud ved en akut fejl? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Ved akutte elfejl bestræber vi os på at rykke ud samme dag. Ring til os, så finder vi den hurtigst mulige løsning.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Hvad koster det, og hvornår ved jeg prisen? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Se vores vejledende priser ovenfor. Ved større opgaver kommer vi altid forbi og giver et præcist tilbud, før arbejdet starter.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Giver I garanti på det udførte arbejde? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Ja — alt arbejde udføres i henhold til gældende el-sikkerhedsregler og er dækket af garanti.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Kan I installere ladestander til min elbil? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Selvfølgelig. Vi rådgiver om den rigtige løsning til din bolig og sørger for en sikker og korrekt installation.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Skal jeg selv skaffe materialer til opgaven? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Nej — vi medbringer alt nødvendigt materiale og udstyr. Du skal blot ringe og beskrive opgaven.</div>
-        </div>
+        
+    <div class="faq-item open">
+      <div class="faq-q">Skal jeg kontakte jer i god tid? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Ja, vi anbefaler at du kontakter os i god tid, så vi kan finde det rette tidspunkt til din henvendelse.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hvilke områder dækker I? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Vi dækker Aabenraa og de nærmeste omegnskommuner. Ring til os, hvis du er i tvivl om afstand.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hvordan får jeg et tilbud? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Ring eller skriv til os, så vender vi hurtigt tilbage med et uforpligtende tilbud eller en tid.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er I forsikrede og godkendte? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Ja, vi arbejder efter gældende regler og standarder inden for elektriker-faget.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hvad hvis jeg har brug for hjælp hurtigt? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Kontakt os telefonisk — vi gør altid, hvad vi kan for at hjælpe hurtigst muligt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan I hjælpe uanset opgavens størrelse? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Ja, vi tager gerne både små og store opgaver og rådgiver dig om den bedste løsning.</div>
+    </div>
       </div>
     </div>
   </div>
@@ -1034,7 +975,7 @@ img { display: block; max-width: 100%; }
     <div class="contact-grid">
       <div class="contact-left fu">
         <div class="contact-kicker">04 / Kontakt</div>
-        <h2 class="contact-h2">Find os i<br><em>Aabenrå</em></h2>
+        <h2 class="contact-h2">Find os i<br><em>Aabenraa</em></h2>
         <div class="contact-row">
           <span class="c-lbl">Telefon</span>
           <span class="c-val"><a href="tel:74 62 11 67">74 62 11 67</a></span>
@@ -1049,9 +990,9 @@ img { display: block; max-width: 100%; }
         </div>
         <div class="contact-row">
           <span class="c-lbl">Åbningstider</span>
-          <span class="c-val">Man–fre 07–16 · Akut: Døgnvagt</span>
+          <span class="c-val">Man–fre 09–19 · Lør 08–15</span>
         </div>
-        <a href="tel:74 62 11 67" class="contact-cta">Ring og aftal et besøg →</a>
+        <a href="tel:74 62 11 67" class="contact-cta">Ring og book tid →</a>
       </div>
       <div class="contact-right fu" style="transition-delay:.12s">
         <div class="map-frame">
@@ -1078,7 +1019,7 @@ img { display: block; max-width: 100%; }
     </nav>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 Christiansen Arne · Aabenrå</span>
+    <span class="footer-copy">© 2025 Christiansen Arne · Aabenraa</span>
     <span class="footer-cvr">CVR Ikke fundet</span>
   </div>
 </footer>
@@ -1090,37 +1031,44 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollY > 20);
 }, { passive: true });
 
-// Hero lead form — "Få et tilbud"
-// NOTE: dette er en demo-formular uden serverbackend. Når siden går i drift for en
-// rigtig kunde, erstat kroppen af denne funktion med et rigtigt endpoint, fx et
-// FormSubmit/Formspree POST til kundens e-mail, eller send data til jeres CRM.
-function handleLeadForm(event) {
-  event.preventDefault();
-  const form = event.target;
-  const card = form.closest('.lead-form-card');
-  form.style.display = 'none';
-  const confirm = card.querySelector('.lead-form-confirm');
-  if (confirm) confirm.style.display = 'block';
-  return false;
-}
-
-// Fade-up — Motion (motiondivision/motion), with a guaranteed fallback
-// so text never stays permanently invisible if the CDN is blocked/offline/file://.
-let __revealed = false;
-function __revealAllFu() {
-  if (__revealed) return;
-  __revealed = true;
-  document.querySelectorAll('.fu').forEach(el => {
-    el.style.opacity = 1;
-    el.style.transform = 'none';
+// Mobile menu toggle
+const burger  = document.getElementById('navBurger');
+const navMenu = document.getElementById('navLinks');
+if (burger && navMenu) {
+  burger.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('mobile-open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.classList.toggle('is-open', isOpen);
+  });
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMenu.classList.remove('mobile-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.classList.remove('is-open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('mobile-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.classList.remove('is-open');
+    }
   });
 }
-// Safety net — force-reveal after 1.5s no matter what (covers blocked CDN, no internet, ad-blockers, file:// CORS quirks)
-setTimeout(__revealAllFu, 1500);
 
-import('https://esm.sh/motion@12').then(({ animate, inView, stagger }) => {
+// Burger icon → X when open
+const style = document.createElement('style');
+style.textContent = `
+  .nav-burger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-burger.is-open span:nth-child(2) { opacity: 0; }
+  .nav-burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .nav-burger span { transition: transform .25s, opacity .25s; }
+`;
+document.head.appendChild(style);
+
+// Fade-up — Motion (motiondivision/motion)
+import('https://cdn.jsdelivr.net/npm/motion@latest/dist/es/index.mjs').then(({ animate, inView, stagger }) => {
   inView('.fu', ({ target }) => {
-    if (__revealed) return;
     animate(
       target,
       { opacity: [0, 1], y: [22, 0] },
@@ -1132,17 +1080,11 @@ import('https://esm.sh/motion@12').then(({ animate, inView, stagger }) => {
     );
   }, { amount: 0.08 });
 
-  // Stagger hero content on load
-  if (!__revealed) {
-    animate(
-      '.hero-content > *',
-      { opacity: [0, 1], y: [16, 0] },
-      { duration: 0.7, ease: [0.22, 0.03, 0.26, 1], delay: stagger(0.12, { start: 0.2 }) }
-    );
-  }
-}).catch(() => {
-  // Motion failed to load entirely — reveal content immediately, no animation
-  __revealAllFu();
+  animate(
+    '.hero-content > *',
+    { opacity: [0, 1], y: [16, 0] },
+    { duration: 0.7, ease: [0.22, 0.03, 0.26, 1], delay: stagger(0.12, { start: 0.2 }) }
+  );
 });
 
 // FAQ accordion
